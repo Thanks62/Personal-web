@@ -1,0 +1,13 @@
+$prefix: "system_";
+.#{$prefix} {
+  &container {
+    width: 80%;
+    max-width: 900px;
+    min-width: 550px;
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+}

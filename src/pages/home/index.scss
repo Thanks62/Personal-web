@@ -1,0 +1,17 @@
+$prefix: "home_";
+.#{$prefix} {
+  &container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+  }
+  &date {
+    background-color: #f8b1b8;
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: bold;
+  }
+}

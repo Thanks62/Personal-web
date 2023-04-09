@@ -6,19 +6,22 @@ const prefix = "layout-sider_";
 function Menu(props) {
   const { name, icon, path } = props.item
   return <Link to={path}>
-    <div className={`${prefix}menus--item`}>
+    <div className={`${prefix}menus--item`} onClick={() => props.changeTitle(name)}>
       <div>{icon}</div>
-      <div>
+      <div className={`${prefix}menus--text`}>
         {name}
       </div>
     </div>
   </Link>
 }
 function Sider(props) {
+  const changeTitle = (title="Thanks moon's") => {
+    document.title = title
+  }
   return (
     <div className={`${prefix}container`}>
-      <Link to="/index">
-        <div className={`${prefix}header`}>
+      <Link to="/home">
+        <div className={`${prefix}header`} onClick={() => changeTitle('主页')}>
           <div className={`${prefix}avatar`}>
             <img src={Avatar} alt="avatar" width="100%" />
           </div>
@@ -29,7 +32,7 @@ function Sider(props) {
         {
           routersConfig.map(router => {
             if(!router.hideInMenu) {
-              return <div key={router.key}><Menu item={router} /></div>
+              return <div key={router.key}><Menu item={router} changeTitle={changeTitle} /></div>
             }
             return null
           })

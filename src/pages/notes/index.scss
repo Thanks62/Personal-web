@@ -1,0 +1,55 @@
+$prefix: "notes_";
+.#{$prefix} {
+  &title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  &note {
+    text-align: center;
+    width: 110px;
+    margin: 5px 10px;
+    position: relative;
+    cursor: pointer;
+    &--container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &--img {
+      background-color: white;
+      width: 110px;
+      height: 140px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+      position: relative;
+      transition: all ease 0.2s;
+      &:hover {
+        transform: rotateY(27deg) skewY(-6deg);
+        transform-origin: left;
+      }
+    }
+    &--bg {
+      position: absolute;
+      top: 0px;
+      left: -4px;
+      width: 110px;
+      height: 140px;
+      border-left: solid 4px #954949;
+      box-sizing: content-box;
+      background: #f7f7f7;
+      box-shadow: 1px 1px 8px -3px #cccbcb;
+    }
+    &--title {
+      font-size: 13px;
+      font-weight: bold;
+      text-overflow: ellipsis;
+      width: 110px;
+      overflow: hidden;
+      word-break: break-all;
+      white-space: nowrap;
+      color: rgb(34, 34, 34);
+    }
+  }
+}

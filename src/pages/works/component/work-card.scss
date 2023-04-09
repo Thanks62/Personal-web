@@ -1,0 +1,220 @@
+$prefix: "work-card_";
+$prefix-mianyiti: "works-mianyiti_";
+$prefix-readygo: "works-readygo_";
+.#{$prefix} {
+  &header {
+    text-align: center;
+    margin: 20px 0;
+    &--title {
+      margin-bottom: 10px;
+    }
+    &--tags {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .ant-tag {
+      margin: 0;
+      border: none;
+    }
+  }
+  &container {
+    position: relative;
+    margin: 10px;
+    transition: all 1s ease;
+    cursor: pointer;
+    &:hover {
+      .#{$prefix} {
+        &background {
+          transform: skewX(-58deg) rotateX(75deg);
+          transform-origin: bottom;
+          border-color: transparent;
+          opacity: 0.7;
+        }
+        &text {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        &content {
+          transform: scale(1.2) translateY(-29px) translateX(-50px);
+          transform-origin: right;
+        }
+      }
+      .#{$prefix-mianyiti} {
+        &virus1, &virus2, &virus3 {
+          opacity: 1;
+        }
+      }
+      .#{$prefix-readygo} {
+        &content {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  &background {
+    width: 400px;
+    height: 200px;
+    border-radius: 10px;
+    border: solid 4px #e9e6e6;
+    overflow: hidden;
+    // background-image: url('../../../assets/imgs/bg-mianyiti.png');
+    // background-image: url('../../../assets/imgs/bg-readygo.png');
+    // background-repeat: no-repeat;
+    // background-size: 100%;
+    transition: all ease 1s;
+  }
+  &content {
+    position: absolute;
+    top: 50px;
+    left: 40px;
+    width: 100px;
+    transition: all ease 1s;
+  }
+  &text {
+    position: absolute;
+    top: 30px;
+    left: 400px;
+    transition: all ease 1s;
+    transform: translateY(120px);
+    opacity: 0;
+    display: flex;
+    justify-content: space-between;
+    &--title {
+      font-weight: bold;
+      font-size: 20px;
+      color: rgb(68, 68, 68);
+      writing-mode: tb;
+    }
+    &--description {
+      margin-left: 10px;
+      color: #3d3d3d;
+      writing-mode: tb;
+    }
+  }
+}
+.#{$prefix-mianyiti} {
+  &virus1, &virus2, &virus3 {
+    opacity: 0;
+    // transition: all ease 1s;
+  }
+  &virus4 {
+    position: absolute;
+    left: 143px;
+    top: 100px;
+  }
+  &virus5 {
+    position: absolute;
+    left: -21px;
+    top: 79px;
+  }
+  &virus6 {
+    position: absolute;
+    left: 304px;
+    top: 43px;
+  }
+  &virus1 {
+    position: absolute;
+    left: 50px;
+    top: 22px;
+    animation: ani-virus1 10s linear 0s infinite normal none;
+  }
+  &virus2 {
+    position: absolute;
+    left: 154px;
+    top: -28px;
+    animation: ani-virus2 15s linear 0s infinite normal none;
+  }
+  &virus3 {
+    position: absolute;
+    left: 229px;
+    top: 65px;
+    animation: ani-virus3 10s linear 0s infinite normal none;
+  }
+}
+@keyframes ani-virus1 {
+  0% {
+    transform: rotate(0) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+@keyframes ani-virus2 {
+  0% {
+    transform: rotate(360deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(0.5);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+@keyframes ani-virus3 {
+  0% {
+    transform: rotate(0) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(0.8);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+.#{$prefix-readygo} {
+  &content {
+    opacity: 0;
+    transition: all ease 0.5s;
+  }
+  &logo {
+    position: relative;
+    left: 89px;
+    top: 54px;
+    transition: all ease 1s;
+  }
+  &flower1, &flower2, &flower3, &flower4 {
+    position: absolute;
+  }
+  &flower1 {
+    left: 187px;
+    top: 41px;
+    animation: ani-flower1 4s linear 0s infinite normal none;
+  }
+  &flower2 {
+    left: 139px;
+    top: 7px;
+    animation: ani-flower2 4s linear 0s infinite normal none;
+  }
+  &flower3 {
+    opacity: 0.6;
+    left: 256px;
+    top: 7px;
+    animation: ani-flower1 4s linear 0s infinite normal none;
+  }
+  &flower4 {
+    opacity: 0.5;
+    left: 405px;
+    top: 3px;
+    animation: ani-flower1 4s linear 0s infinite normal none;
+  }
+}
+@keyframes ani-flower1 {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes ani-flower2 {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}

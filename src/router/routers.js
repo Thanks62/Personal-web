@@ -1,5 +1,7 @@
 import React, { lazy } from "react"
 import Home from "../pages/home"
+import ICON_NOTES from "@/assets/icons/notes.png";
+import ICON_WORKS from "@/assets/icons/works.png";
 /**
  * @param path 路由路径
  * @param name 路由名称
@@ -27,26 +29,32 @@ export const routersConfig = [
     {
         path: '/works',
         name: '作品集',
-        icon: '',
+        icon: <img src={ICON_WORKS} alt="WORKS" width={30} />,
         component: lazyload("works/index"),
         children: [{
             path: '/details/:id',
             name: '作品集详情',
             hideInMenu: true,
-            component: ''
+            component: lazyload("works-detail/index")
         }]
     },
     {
         path: '/notes',
         name: '笔记',
-        icon: '',
+        icon: <img src={ICON_NOTES} alt="NOTES" width={20} />,
         component: lazyload("notes/index"),
         children: [{
             path: '/details/:id',
             name: '笔记详情',
             hideInMenu: true,
-            component: ''
+            component: lazyload("note-detail/index")
         }]
+    },
+    {
+      path: '/404',
+      name: '页面丢失',
+      hideInMenu: true,
+      component: lazyload("system/404")
     }
 ]
 export const routers = (() => {
